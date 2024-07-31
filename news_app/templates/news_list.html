@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Новости</title>
 </head>
 <body>
-$END$
+    <h1>Новостная лента</h1>
+    <ul>
+        {% for news in object_list %}
+            <li><a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
